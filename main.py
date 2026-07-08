@@ -66,9 +66,12 @@ def create_task(task: TaskSchema, db: Session = Depends(get_db)):
 # get method
 @app.get("/tasks")
 def get_tasks(db: Session = Depends(get_db)):
-    # get all tasks from the database
     tasks = db.query(Task).all()
-    # return the tasks
+
+    print("Total tasks:", len(tasks))
+    for task in tasks:
+        print(task.id, task.task_title)
+
     return {"tasks": tasks}
 
 # ------------------------------------------------------------------------day 2 ------------------------------------------------------------------------------------------------------------------------

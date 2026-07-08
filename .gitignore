@@ -1,0 +1,5 @@
+.env
+# ignore .env file because it contains sensitive information like database credentials.
+
+venv/
+# ignore virtual environment folder if it exists

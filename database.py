@@ -9,7 +9,16 @@ from sqlalchemy.ext.declarative import declarative_base
 # copy this from neon dashboard and replace the username,password,and host with your own credentials
 # DATABASE_URL = "postgresql://username:password@host:port/database_name?sslmode=require&channel_binding=require"
 
-DATABASE_URL ="postgresql://neondb_owner:npg_yGDl1azib0UJ@ep-summer-fire-aoz1iz4u-pooler.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+import os           
+# import function that can read the .env file ,i.e open the .env file and load all the environment variables from it into the memory
+
+from dotenv import load_dotenv
+# load environment variables from .env file
+load_dotenv()
+# get the database url from the .env file
+DATABASE_URL = os.getenv("DATABASE_URL")  
+
+
 # here,we create a connection to the postgreSQL database hosted on the cloud(neon)
 # note click "show password" and copy the complete connection string
 
