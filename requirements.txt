@@ -1,0 +1,10 @@
+python-jose
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+pydantic
+passlib==1.7.4
+bcrypt==4.0.1
+dotenv==1.0.1
+# ---
